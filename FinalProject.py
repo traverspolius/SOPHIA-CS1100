@@ -1,6 +1,17 @@
+
+# ------------------------------------------------------------
+# Sophia Learning - Introduction to Python Programming
+# Touchstone 4: Python Journal Project
+# Title: Day Counter
+# Description: Use this counter to find the number of 
+#              days between today's date and a future date.
+# By: Travers Polius 
+# Date: 04-27-2025
+#-------------------------------------------------------------
+
 from datetime import datetime
 
-# Get user input for the target date (YYYY-MM-DD format)
+# Get user input for the target date (MM-DD-YYYY format)
 target_date_str = input("Enter a future date (MM-DD-YYYY): ")
 
 try:
