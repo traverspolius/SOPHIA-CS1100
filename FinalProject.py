@@ -11,21 +11,22 @@
 
 from datetime import datetime
 
-# Get user input for the target date (MM-DD-YYYY format)
-target_date_str = input("Enter a future date (MM-DD-YYYY): ")
+while True:  # Loop to allow multiple inputs until exit condition is met
+    target_date_str = input("Enter a future date (MM-DD-YYYY) or type 'exit' to quit: ")
 
-try:
-    # Convert input string to a datetime object
-    target_date = datetime.strptime(target_date_str, "%m-%d-%Y")
-    # Get today's date
-    today_date = datetime.today()
-    # Calculate the difference in days
-    days_remaining = (target_date - today_date).days
+    if target_date_str.lower() == "exit":  # Check for exit condition
+        print("Exiting program. Goodbye!")
+        break  # Exit the loop
 
-    if days_remaining >= 0:
-        print(f"There are {days_remaining} days until {target_date_str}.")
-    else:
-        print("The date you entered has already passed.")
+    try:
+        target_date = datetime.strptime(target_date_str, "%m-%d-%Y")
+        today_date = datetime.today()
+        days_remaining = (target_date - today_date).days
 
-except ValueError:
-    print("Invalid date format. Please use MM-DD-YYYY.")
+        if days_remaining >= 0:
+            print(f"There are {days_remaining} days until {target_date_str}.")
+        else:
+            print("The date you entered has already passed.")
+
+    except ValueError:
+        print("Invalid date format. Please use MM-DD-YYYY.")
